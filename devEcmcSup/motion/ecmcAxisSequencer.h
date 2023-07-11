@@ -67,6 +67,7 @@ enum ecmcHomingType {
   ECMC_SEQ_HOME_LOW_LIM_INDEX            = 11,
   ECMC_SEQ_HOME_HIGH_LIM_INDEX           = 12,
   ECMC_SEQ_HOME_SET_POS                  = 15,
+  ECMC_SEQ_HOME_BWD_NC_HOME              = 17,
   ECMC_SEQ_HOME_LOW_LIM_SINGLE_TURN_ABS  = 21,
   ECMC_SEQ_HOME_HIGH_LIM_SINGLE_TURN_ABS = 22,
   ECMC_SEQ_HOME_SET_POS_2                = 25,   // Same as ECMC_SEQ_HOME_SET_POS but not blocked by motor. Code handled in ecmcMotorRecordAxis
@@ -144,6 +145,7 @@ class ecmcAxisSequencer : public ecmcError {
   int    seqHoming11();  // nCmdData==11
   int    seqHoming12();  // nCmdData==12
   int    seqHoming15();  // nCmdData==15
+  int    seqHoming17();  // nCmdData==17
   int    seqHoming21();  // nCmdData==21
   int    seqHoming22();  // nCmdData==22
   int    checkHWLimitsAndStop(bool checkBWD,
